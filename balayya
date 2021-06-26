@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+import sys
+import linecache
+from BalayyaLang.utils import Thappulu
+
+
+def main():
+    print('hello')
+
+
+def PrintException():
+    tb = sys.exc_info()[-1]
+    filename = tb.tb_frame.f_code.co_filename
+    lineno = tb.tb_lineno
+    command = linecache.getline(
+        filename, lineno, tb.tb_frame.f_globals).strip()
+    print(
+        f'\n Nee tappu {filename} lo \n    V \n Line no.{lineno} lo \n    V \n {command} ane command lo undi')
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except Thappulu as thappu:
+        print(thappu)
+        PrintException()
+
+else:
+    raise Thappulu(
+        'Ilaga BalayyaLang ni vere languages lo import cheskune aaskaram prasthuthaniki ledu')
