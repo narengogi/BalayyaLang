@@ -3,7 +3,7 @@ import sys
 import linecache
 import os
 
-from BalayyaLang.utils import Thappulu, showHelp, errors
+from BalayyaLang.utils import Thappulu, showHelp, err
 from BalayyaLang.api import BalayyaLang
 
 
@@ -13,22 +13,12 @@ def main():
 
     filename = sys.argv[-1]
     if not os.path.isfile(filename):
-        raise Thappulu(errors.C404)
+        raise Thappulu(err.C404)
     elif os.path.splitext(filename)[-1] != '.simha':
-        raise Thappulu(errors.C405)
+        raise Thappulu(err.C405)
 
     script = BalayyaLang()
     script.run(filename)
-
-
-def PrintException():
-    tb = sys.exc_info()[-1]
-    filename = tb.tb_frame.f_code.co_filename
-    lineno = tb.tb_lineno
-    command = linecache.getline(
-        filename, lineno, tb.tb_frame.f_globals).strip()
-    print(
-        f'\n Nee tappu {filename} lo \n    V \n Line no.{lineno} lo \n    V \n {command} ane command lo undavacchu')
 
 
 if __name__ == '__main__':
@@ -36,8 +26,6 @@ if __name__ == '__main__':
         main()
     except Thappulu as thappu:
         print(thappu)
-        PrintException()
-
 else:
     raise Thappulu(
         'Ilaga BalayyaLang ni vere languages lo import cheskune soukaryam prasthuthaniki ledu')

@@ -7,6 +7,7 @@ class BalayyaLang:
 
     def _pyCompiler(self, filename):
         lex = Lexer(filename)
+        lex.parse()
 
     def run(self, filename):
         pyCompiled = self._pyCompiler(filename)
