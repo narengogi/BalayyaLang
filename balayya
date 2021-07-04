@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import sys
-import linecache
+# import linecache
 import os
 
 from BalayyaLang.utils import Thappulu, showHelp, err
@@ -10,6 +10,7 @@ from BalayyaLang.api import BalayyaLang
 def main():
     if len(sys.argv) <= 1 or ('-h' or '-help' or 'help') in sys.argv:
         showHelp()
+        exit()
 
     filename = sys.argv[-1]
     if not os.path.isfile(filename):

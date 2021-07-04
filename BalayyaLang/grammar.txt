@@ -1,0 +1,8 @@
+factor: NUM
+
+basicOpFirstOrder: vibinchu|ganinchu
+basicOpSecondOrder: jodinchu|baginchu
+
+term: factor (basicOpFirstOrder factor)*
+
+expr: term (basicOpSecondOrder term)*
