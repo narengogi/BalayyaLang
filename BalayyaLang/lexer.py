@@ -84,5 +84,3 @@ class Lexer:
                 self.tokens.append(self.genTextToken(word))
             else:
                 raise Thappulu(e.C101, self.currLine)
-
-        print(self.tokens)

@@ -9,9 +9,12 @@ class err:
         color.END + 'ani undaali ra bloody fool'
     C101 = 'em ra Telugu matladadam marchipoyav enti ee incorrect character'
     C102 = 'em ra Telugu matladadam marchipoyav enti ee incorrect word'
+    C103 = 'structural error ra bhai!'
 
     def info(line):
         return f'ee line lo thappu undi ra Balaraju: \n--->\n{line}'
+    def noMethod(node):
+        return f'ee node syntax correct ga ledu ra Balaraju: \n--->\n{node}'
 
 
 HELP = 'Sahaayam koraku:' + color.BOLD + \

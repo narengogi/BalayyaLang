@@ -51,9 +51,9 @@ class Parser:
         return self.__getBinaryToken(self._getNum, [t.MULTIPLY, t.DIVIDE])
     
     def _getExpr(self):
-        return self.__getBinaryToken(self._getNum, [t.PLUS, t.MINUS])
+        return self.__getBinaryToken(self._getTerm, [t.PLUS, t.MINUS])
 
     def run(self):
-        res = self._getTerm()
+        res = self._getExpr()
         return res
         
